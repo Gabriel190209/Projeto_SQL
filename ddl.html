@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DDL</title>
+</head>
+<body>
+    <table border="0" width="900" align="center" id="table_G">
+        <tr>
+            <td colspan="2">
+                <h1>DDL (Linguagem de Definição de Dados)</h1>
+            </td>
+            <td align="right">
+                <a href="index.html">Inicio</a>
+            </td>
+        </tr>   
+        <tr>
+            <td colspan="2" align="center">
+                <img src="images/DDL.png" alt="ddl" width="300px">
+            </td> 
+        </tr>    
+        <tr> 
+            <td colspan="2">
+            <hr>   
+            <p>São comandos que <strong>interagem com os objetos do banco de dados</strong>, 
+                    utilizados para definir e gerenciar a estrutura dos objetos do banco de dados,também, 
+                    define como os dados são organizados em um banco de dados 
+                    e gerencia a relação das diferentes tabelas.  
+            <br>Existem 6 comandos DDL, porém os principais são: <span style="background-color:#47b9ef;"> <strong>ALTER, CREATE e DROP.</strong></span></p>
+            <br>
+            <h2> <span class="grif">ALTER</span></h2>
+            <p>Modifica,renomeia,adiciona ou exclui as colunas de uma tabela. </p>
+            <p> <span style="background-color: #47b9ef "> <strong>ADD</strong></span> - Para adicionar uma coluna.</p>
+            <div class="terminal">
+                <span class="text-mark">ALTER TABLE</span> atores <span class="text-mark">ADD</span> nascimento String(10); <br>
+            </div>
+            <p> <span style="background-color: #47b9ef"><strong>RENAME</strong></span> - Já para renomear uma coluna.</p>
+            <div class="terminal">
+                <span class="text-mark">ALTER TABLE</span> atores <span class="text-mark">RENAME COLUMN</span> nascimento <span class="text-mark">TO</span> data_nascimento;
+            </div>
+            <p> <span style="background-color: #47b9ef"><strong>ALTER</strong></span> - Agora para modificar uma coluna.</p>
+            <div class="terminal">
+                <span class="text-mark">ALTER TABLE</span> atores <span class="text-mark">ALTER COLUMN</span> data_nascimento Date(10);
+            </div>
+            <p> <span style="background-color: #47b9ef"><strong>DROP</strong></span> - Para excluir uma coluna.</p>
+            <div class="terminal">
+                <span class="text-mark">ALTER TABLE</span> atores <span class="text-mark">DROP COLUMN</span> data_nascimento;
+            </div>                
+            <br>
+            <h2> <span class="grif">CREATE</span></h2>
+            <p>Cria uma nova tabela, com nomes das colunas e o tipos de dado(String,float,int ou date) em que cada uma receberá.</p>
+            <div class="terminal">
+                <span class="text-mark">CREATE TABLE</span> atores {
+                    <br> <span class="text-comment">id_actor</span> String(100),
+                    <br> <span class="text-comment">nacionalidade</span> String(100),
+                    <br> <span class="text-comment">premios</span> String(500),
+                    <br> <span class="text-comment">idade</span> Int(2);
+                    <br>}
+            </div>    
+            <br>
+            <h2> <span class="grif">DROP</span></h2>
+            <p> Exclui completamente tudo de tal tabela, até seus valores.</p>
+            <div class="terminal">
+                <span class="text-mark">DROP TABLE</span> atores;
+            </div> 
+            </td>  
+        </tr>
+    </table>
+</body>
+</html>

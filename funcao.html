@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Funções Agregadas SQL</title>
+</head>
+<body>
+  <table border="0" width="900" align="center" id="table_G">
+    <tr>
+      <td colspan="2">
+        <h1>Funções agregadas (AVG, COUNT, MAX, MIN, SUM)</h1>
+      </td>
+      <td align="right">
+        <a href="index.html">Inicio</a>
+      </td>
+    </tr> 
+    <tr>
+        <td colspan="2" align="center">
+          <img src="https://i.ytimg.com/vi/IGGepD_9R68/maxresdefault.jpg" alt="funcao agregada" width="300px">
+        </td>
+    </tr>   
+    <tr>
+        <td colspan="2">
+            <hr>
+            <p>As funções agregadas em SQL (como <strong>AVG, COUNT, MAX, MIN, SUM</strong>) são usadas para realizar cálculos em um conjunto de linhas 
+                    e retornar um único valor resumido. Elas são ferramentas essenciais para análises e relatórios em bancos de dados, permitindo calcular totais, médias,
+                    contagens, valores máximos e mínimos de forma eficiente.</p>
+            <h2>Funções principais:</h2>
+            <ul>
+                <li><strong>SUM()</strong>: Calcula a soma de todos os valores em uma coluna numérica.</li>
+                <li><strong>AVG()</strong>: Calcula a média aritmética de todos os valores em uma coluna numérica.</li>
+                <li><strong>COUNT()</strong>: Conta o número de linhas em uma tabela ou o número de valores não nulos em uma coluna.</li>
+                <li><strong>MAX()</strong>: Retorna o valor máximo em uma coluna.</li>
+                <li><strong>MIN()</strong>: Retorna o valor mínimo em uma coluna.</li>
+            </ul>
+
+            <h2>Observações:</h2>
+            <ul>
+                <li>As funções <strong>SUM()</strong> e <strong>AVG()</strong> são aplicáveis apenas a colunas numéricas.</li>
+                <li><strong>MAX()</strong>, <strong>MIN()</strong> e <strong>COUNT()</strong> podem ser aplicadas a diversos tipos de dados (números, textos, datas, etc.).</li>
+                <li>Valores <code>NULL</code> são geralmente ignorados, exceto pela função <strong>COUNT()</strong>, que conta apenas os valores não nulos.</li>
+                <li>É possível combinar várias funções agregadas numa consulta: </li> </ul>
+            <div class="terminal">
+                <span class="text-mark">SELECT COUNT(*)</span> AS num_clientes, AVG(salario) AS media_salario FROM clientes;
+            </div>
+
+            <h2>Exemplos de código SQL com funções agregadas:</h2>
+            <h3>1. COUNT:</h3>
+            <div class="terminal">
+                <span class="text-mark">SELECT COUNT(*)</span> FROM tabela;
+            </div>
+            <div class="terminal">
+                <span class="text-mark">SELECT COUNT(*)</span>FROM tabela WHERE coluna > 10;
+            </div>
+            <div class="terminal">
+                <span class="text-mark">SELECT COUNT(DISTINCT coluna)</span>FROM tabela;
+            </div>
+    
+            <h3>2. SUM:</h3>
+            <div class="terminal">
+                <span class="text-mark">SELECT SUM(coluna)</span>FROM tabela;
+            </div>
+            <div class="terminal">
+                <span class="text-mark">SELECT SUM(coluna)</span>FROM tabela WHERE coluna2 = 'valor';
+            </div>  
+               
+            <h3>3. AVG:</h3>
+            <div class="terminal">
+                <span class="text-mark">SELECT AVG(coluna)</span> FROM tabela;
+            </div>  
+            <div class="terminal">
+                <span class="text-mark">SELECT AVG(coluna)</span> FROM tabela WHERE coluna2 > 5;
+            </div>  
+
+            <h3>4. MAX:</h3>
+            <div class="terminal">
+                <span class="text-mark">SELECT MAX(coluna)</span> FROM tabela;
+            </div>  
+            <div class="terminal">
+                <span class="text-mark">SELECT MAX(coluna)</span> FROM tabela WHERE coluna2 < 20;
+            </div>         
+
+            <h3>5. MIN:</h3>
+            <div class="terminal">
+              <span class="text-mark">SELECT MIN</span>(coluna) FROM tabela;
+            </div>
+
+            <h2>Exemplo prático:</h2>
+            <p>Suponha que você tenha uma tabela <code>produtos</code> com colunas <strong>id, nome, preco</strong> e <strong>categoria</strong>.</p>
+            <div class="terminal">
+              <span class="text-mark">SELECT COUNT</span> FROM produtos;
+            </div>
+            <div class="terminal">
+              <span class="text-mark">SELECT AVG(*)</span> FROM produtos;
+            </div>  
+            <div class="terminal">
+              <span class="text-mark">SELECT MAX</span> FROM produtos;
+            </div>
+            <div class="terminal">
+              <span class="text-mark">SELECT MIN</span> FROM produtos;
+            </div>
+            <div class="terminal">
+              <span class="text-mark">SELECT SUM</span> FROM produtos;
+            </div>
+            <div class="terminal">
+              <span class="text-mark">SELECT COUNT</span> FROM produtos WHERE categoria = 'eletronicos';
+            </div>
+
+            <h2>Exemplo de tabela de vendas:</h2>
+                <table id="tabela" border="1" cellpadding="5" cellspacing="0" align="center">
+                <tr>
+                    <th>ID_Venda</th>
+                    <th>ID_Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço Unitário</th>
+                    <th>Data da Venda</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>101</td>
+                    <td>2</td>
+                    <td>25.50</td>
+                    <td>2024-01-15</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>102</td>
+                    <td>1</td>
+                    <td>10.00</td>
+                    <td>2024-01-20</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>101</td>
+                    <td>3</td>
+                    <td>25.50</td>
+                    <td>2024-02-10</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>103</td>
+                    <td>5</td>
+                    <td>5.00</td>
+                    <td>2024-02-28</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>102</td>
+                    <td>2</td>
+                    <td>10.00</td>
+                    <td>2024-03-05</td>
+                </tr>
+                </table>    
+            </tr>  
+        </td>
+  </table>
+</body>
+</html>

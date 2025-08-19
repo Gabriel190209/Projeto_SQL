@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table border="0" width="900" align="center" id="table_G">
+        <tr>
+            <td>
+                <h1 id="dml_title"><b>DML (Data Manipulation Language)</b></h1>
+            </td>
+            <td align="right">
+                <a href="index.html">Inicio</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><hr></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <img 
+                src="images/DML.png" 
+                alt="imagem esquema"
+                width="300px"
+                >
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><br></td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    DML, que significa Data Manipulation Language, é um subconjunto da 
+                    linguagem SQL utilizado para trabalhar com os dados armazenados em tabelas de um banco de dados.
+                    A manipulação de dados é essencial em qualquer sistema que dependa de informações armazenadas. Por isso, a DML 
+                    está presente em praticamente todas as aplicações que utilizam banco de dados, desde cadastros simples até 
+                    sistemas bancários complexos. Os comandos que compõem a DML são: <span style="background-color: yellow;">INSERT, SELECT, UPDATE e DELETE</span>.
+                </p>
+
+                <br>
+                <hr>
+                
+                <h3 class="tipes">INSERT:</h3>
+
+                <p>
+                    O comando <span style="background-color: yellow;">INSERT</span> é usado para adicionar novos dados à tabela. Sempre que um novo registro precisa ser criado, 
+                    utilizamos o INSERT INTO seguido do nome da tabela, os nomes das colunas e os respectivos valores a serem inseridos.
+                </p>
+
+                <p>Ex:</p>
+
+                <div class="terminal">
+                    <span class="text-mark">INSERT INTO</span> clientes (nome, idade, cidade) <br> <span class="text-mark">VALUES</span> ('João', 25, 'São Paulo');<br>
+                </div>
+
+                <p>
+                    Com isso, uma nova linha é criada na tabela com os dados informados.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><hr></td>
+        </tr>
+        <tr>
+            <td>
+                <h3 class="tipes">SELECT:</h3>
+
+                <p>
+                    Já o comando <span style="background-color: yellow;">SELECT</span> é utilizado para consultar os dados armazenados no banco. É o comando mais utilizado em SQL, 
+                    pois através dele conseguimos visualizar as informações contidas nas tabelas. Com o SELECT, podemos buscar todos 
+                    os registros ou apenas alguns campos específicos, além de aplicar condições, ordenar resultados ou limitar a quantidade 
+                    de dados exibidos.
+                </p>
+
+                <p>Ex:</p>
+
+                <div class="terminal">
+                    <span class="text-mark">SELECT</span> * <span class="text-mark">FROM</span> clientes; <br>
+                </div>
+
+                <p>Se quiser uma condição especifica:</p>
+
+                <div class="terminal">
+                    <span class="text-mark">SELECT</span> * <span class="text-mark">FROM</span> clientes <span class="text-mark">WHERE</span> idade > 40<br>
+                </div>
+
+                <p>Se quiser ver apenas o nome e a cidade:</p>
+
+                <div class="terminal">
+                    <span class="text-mark">SELECT</span> nome, cidade <span class="text-mark">FROM</span> clientes; <br>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><hr></td>
+        </tr>
+        <tr>
+            <td>
+                <h3 class="tipes">UPDATE:</h3>
+
+                <p>
+                    Para atualizar dados já existentes, usamos o comando <span style="background-color: yellow;">UPDATE</span>. Ele permite modificar valores de uma ou 
+                    mais colunas, em registros específicos. Se caso usado sem o filtro WHERE, ele pode alterar todos os registros 
+                    da tabela.
+                </p>
+
+                <p>Ex:</p>
+
+                <div class="terminal">
+                    <span class="text-mark">UPDATE</span> clientes <br> <span class="text-mark">SET</span> cidade = "São Paulo" <br> <span class="text-mark">FROM</span> nome = "Jonas" <br>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><hr></td>
+        </tr>
+        <tr>
+            <td>
+                <h3 class="tipes">DELETE:</h3>
+
+                <p>
+                    O comando <span style="background-color: yellow;">DELETE</span> é usado para remover registros da tabela. Assim como o UPDATE, o DELETE precisa 
+                    ser usado com cuidado. Se o WHERE for omitido, todos os registros da tabela serão apagados.
+                </p>
+
+                <p>Ex:</p>
+
+                <div class="terminal">
+                    <span class="text-mark">DELETE FROM</span> clientes <br> <span class="text-mark">WHERE</span> nome = "Jonas" <br>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><hr></td>
+        </tr>
+        <tr>
+            <td>
+                <h3 class="tipes_G">TRANSAÇÕES:</h3>
+
+                <p>
+                    a DML também pode ser utilizada em conjunto com transações, que são blocos de comandos executados de forma segura. 
+                    Com o uso de transações, garantimos que um conjunto de alterações só será realizado se tudo funcionar corretamente. 
+                    Isso é útil em situações como transferências bancárias, onde precisamos garantir que o valor saia de uma conta e entre 
+                    em outra, sem erros no processo.
+                </p>
+
+                <p>Ex:</p>
+
+                <table align="center" id="tabela" border="1" cellpadding="5" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Saldo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>João</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Maria</td>
+                            <td>500</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="terminal">
+                    <span class="text-mark">START TRANSICTION</span> <br> <span class="text-mark">UPDATE</span> contas <span class="text-mark">SET</span> saldo = saldo - 100 <span class="text-mark">WHERE</span> id = 1 <br> <span class="text-mark">UPDATE</span> contas <span class="text-mark">SET</span> saldo = saldo + 100 <span class="text-mark">WHERE</span> id = 2 <br> <span class="text-mark">COMMIT</span>;<br>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

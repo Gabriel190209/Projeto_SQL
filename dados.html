@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😒🙄</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table width="900" align="center">
+        <tr>
+            <td>
+                <h1>Tipos de Dados</h1>
+                    <p>Dentro do SQL Server temos diversos tipos de dados, como: <i>string</i>, dados numéricos e dados de data e hora.</p>
+                
+                    <h2><i>String</i></h2>
+                        <img src="/images/dadosS.png" alt="Dados de String" width="849" height="587">
+                        <p><br>Dentre os muitos listados os que se destacam mais são: VARCHAR(); CHAR(); e TEXT.</p>
+                        
+                        <h3>CHAR(tamanho)</h3>
+                            <p>O comando CHAR tem como objetivo armazenar siglas e dados com caracteres fixos. Diferente do VARCHAR, o CHAR vai completar o armazenamento com o argumento que você colocar em "tamanho".</p>
+                            <p>Exemplo:</p>
+
+                            <div class="terminal">
+                                CPF <span class="text-mark">CHAR(5)</span>; _ _ _ _ _ _ _ _ _ _ CHAR de 5, ESPAÇO ARMAZENADO: 5
+                            </div>
+
+                        <h3>VARCHAR(tamanho)</h3>
+                            <p>O comando VARCHAR tem como objetivo armazenar frases e textos pequenos de forma rápida e flexível. O VARCHAR só irá ocupar o tanto de caracter que existir dentro da string, desde que não o exceda.</p>
+                            <p>Exemplo:</p>
+
+                            <div class="terminal">
+                                Isaac Iuri Alves de Oliveira <span class="text-mark">VARCHAR(100)</span>; _ _ _ _ _ _ _ _ _ _ VARCHAR de 100, ESPAÇO ARMAZENADO: 28
+                            </div>
+
+                        <h3>TEXT</h3>
+                            <p>O comando TEXT tem como objetivo armazenar textos médios e longos. Ele é a melhor opção de guardar documentos de texto, já que não é preciso colocar o número de argumento.</p>
+                            <p>Exemplo:</p>
+
+                            <div class="terminal">
+                                "O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro..." <span class="text-mark">TEXT</span>
+                            </div>
+
+                    <h2>Dados Numéricos</h2>
+                        <img src="/images/dadosN.png" alt="Dados Numéricos" width="736" height="629">
+                        <p><br>Os que mais chamam atenção dentro dos dados numéricos são:</p>
+
+                        <h3>INT</h3>
+                            <p>O comando INT armazena valores inteiros. Porém, o comando INT somente armazena valores entre -2.147.483.648 a 2.147.483.647.</p>
+                            <p>Exemplo:</p>
+
+                            <div class="terminal">
+                                2025 <span class="text-mark">INT</span>; <br>
+                            </div>
+
+                        <h3>BOOLEAN (BOOL)</h3>
+                            <p>O comando BOOLEAN ou BOOL, é um comando de verificação de verdadeiro e falso. Ele pode receber valores como "TRUE" e "FALSE", ou, "0" e "1".</p>
+                            <p>Exemplo:</p>
+
+                            <div class="terminal">
+                                <span class="text-mark">TRUE BOOLEAN</span>; <br>
+                            </div>
+
+                        <h3>FLOAT</h3>
+                            <p>O comando FLOAT é parecido com o INT, porém consegue, além de armazenar valores inteiros, valores decimais também. Ele chega a ser mais preciso do que o DOUBLE.</p>
+                            <p>Exemplo:</p>
+
+                            <div class="terminal">
+                                182,42 <span class="text-mark">FLOAT(6,2)</span>; _ _ _ _ _ _ _ _ _ _  (até 6 dígitos no total, 2 depois da vírgula)<br>
+                            </div>
+
+                        <h3>DOUBLE</h3>
+                            <p>O comando DOUBLE lembra bastante o FLOAT, porém, consegue ser mais preciso e ocupar um pouco mais de espaço.</p>
+                            <p>Exemplo:</p>
+
+                            <div class="terminal">
+                                123.12345 <span class="text-mark">DOUBLE(10,6);</span>  _ _ _ _ _ _ _ _ _ _  (até 10 dígitos no total, 6 depois da vírgula)<br>
+                            </div>
+
+                        <h3>DECIMAL (DEC)</h3>
+                            <p>O comando DECIMAL se encaixa bastante na descrição do DOUBLE e do FLOAT, porém ocupa mais espaço ainda e garante a precisão exata. Pode ser usado bastante para resultados financeiros onde o minimo de erro é crucial para estragar os cálculos.</p>
+                            <p>Exemplo:</p>
+
+                            <div class="terminal">
+                                3.14159265359 <span class="text-mark">DECIMAL(13,12)</span>;
+                            </div>
+
+                    <h2>Dados de Data e Hora</h2>
+                        <img src="/images/dadosDeH.png" alt="Dados de Data e Hora" width="" height="">
+                        <p><br>Deste nicho, os mais usados são:</p>
+                            
+                        <h3>DATE</h3>
+                            <p>Este comando, tem como objetivo mostrar somente a data neste formato (YYYY-MM-DD). Somente é usado quando quer somente a data, sem as horas exatas.</p>
+                            <p>Exemplo:</p>
+
+                            <div class="terminal">
+                                2008-12-10 <span class="text-mark">DATE</span>;
+                            </div>
+
+                        <h3>DATETIME</h3>
+                            <p>Este comando, tem como objetivo mostrar a data e o horário neste formato (YYYY-MM-DD 00:00:00). Ocupa um pouco mais de espaço, por conta do horário completo.</p>
+                            <p>Exemplo:</p>
+
+                            <div class="terminal">
+                                2008-12-10 08:12:36 <span class="text-mark">DATETIME</span>;
+                            </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

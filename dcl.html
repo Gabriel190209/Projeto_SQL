@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😘😜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table width="900" align="center" id="table_G">
+        <tr>
+            <td>
+                <h1>DCL</h1>
+            </td>
+            <td>
+                <a href="index.html">Inicio</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>DCL em mySQL significa Linguagem de Controle de Dados (Data Control Language, em inglês). É um subconjunto da linguagem SQL usado para gerenciar as permissões e o controle de acesso aos dados em um banco de dados.</p>
+                <p>Basicamente, o DCL é a parte em que gerencia as permissões e acessos dos usuário no banco de dados.</p>
+            
+                <h2><i>GRANT</i></h2>
+                <p>O comando GRANT é aquele que concede permissões e acessos aos usuários. Ele é o ADM bom do game que te coisas que os outros não conseguem.</p>
+
+                <div class="terminal">
+                    <span class="text-mark">GRANT SELECT ON </span> <b>(nome do server)</b> <span> TO 'joao'@'localhost'</span>; <br>
+                </div>
+            
+                <h2><i>REVOKE</i></h2>
+                <p>O comando REVOKE é aquele que revoga/remove privilégios obtidos anteriormente. Ele é o ADM justo, que desfaz tudo o que o ADM bom já fez.</p>
+            
+                <div class="terminal">
+                    <span class="text-mark">REVOKE SELECT ON </span> <b>(nome do server)</b> <span> TO 'joao'@'localhost'</span>; <br>
+                </div>
+
+                <h2><i>DENY</i></h2>
+                <p>O comando DENY é aquele impede explicitamente que um usuário ou grupo receba uma permissão, mesmo que ela seja concedida por meio de herança ou outros privilégios. Ele é o ADM mau absoluto, ele impede que GRANT's ou ADM's bons façam boas ações.</p>
+                
+                <div class="terminal">
+                    <span class="text-mark">DENY DELETE ON </span> <b>(nome do host)</b> <span> TO </span>joao; <br>
+                </div>
+
+                <p>Com os comandos citados acima, definem a permissão do usuário sobre estas ações:</p>
+                <ul>
+                    <li>Leitura (DML - SELECT)</li>
+                    <li>Escrita (DML - INSERT, UPDATE e DELETE)</li>
+                    <li>Criação de Objetos (DCL - CREATE, ALTER e DROP)</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
